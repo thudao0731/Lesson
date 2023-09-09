@@ -4,8 +4,8 @@
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 //Thiết lập hằng số cho client
-const _MODULE_DEFAULT = 'auth'; //Module mặc định
-const _ACTION_DEFAULT = 'loginClient'; //Action mặc định
+const _MODULE_DEFAULT = 'home'; //Module mặc định
+const _ACTION_DEFAULT = 'lists'; //Action mặc định
 
 //Thiết lập hằng số cho admin
 const _MODULE_DEFAULT_ADMIN = 'auth';

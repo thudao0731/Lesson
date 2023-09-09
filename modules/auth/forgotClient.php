@@ -31,7 +31,7 @@ if (isPost()){
             if ($updateStatus){
 
                 //Tạo link khôi phục
-                $link = _WEB_HOST_ROOT_ADMIN.'/?module=auth&action=reset&token='.$forget_token;
+                $link = _WEB_HOST_ROOT.'/?module=auth&action=reset&token='.$forget_token;
 
                 //Thiết lập gửi email
                 $subject = 'Yêu cầu khôi phục mật khẩu';
@@ -62,29 +62,26 @@ if (isPost()){
 
     }
 
-    redirect('admin/?module=auth&action=forgot');
+    redirect('/?module=auth&action=forgotClient');
 }
 
 $msg = getFlashData('msg');
 $msgType = getFlashData('msg_type');
 ?>
-    <div class="row">
-        <div class="col-3" style="margin: 20px auto;">
-            <div class="forgot">
-            <h3 class="text-center title">Forgot</h3>
-            <?php getMsg($msg, $msgType); ?>
+        <div class="forgot">
+            <h3 class="title">Forgot</h3>
             <form action="" method="post">
-                <div class="form-group">
+                <div class="email-inner">
                     <label for="">Email</label>
                     <input type="email" name="email" class="form-control" placeholder="Địa chỉ email...">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Xác nhận</button>
                 <hr>
-                <p class="text-center"><a href="?module=auth&action=login">Đăng nhập</a></p>
+                <p class="login-inner"><a href="?module=auth&action=loginClient" class="login-link">Đăng nhập</a></p>
             </form>
-            </div>
         </div>
-    </div>
+       
+   
 <?php
 
 layout('footer-login', 'admin');

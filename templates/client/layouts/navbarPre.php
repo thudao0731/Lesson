@@ -122,21 +122,10 @@
                             </li>
                         </ul>
                     </nav>
-                    <?php
-                        $userId = isLogin()['user_id'];
-                        $userDetail = getUserInfo($userId); // Lấy thông tin người dùng
-                    ?>
-                    <!-- Info -->
-                    <div class="dropdown">
-                        <div class="info_Login">
-                            <a href="#!"><img src="<?php echo $userDetail['thumbnail'] ?>" alt="" class="avatar-header"></a>
-                            <img src="<?php echo _WEB_HOST_ROOT ?>/templates/client/img/king.svg" alt="" class="king">
-                        </div>
-                        <div class="dropdown-content">
-                            <a href="#">Trang cá nhân</a>
-                            <a href="#">Cài đặt</a>
-                            <a href="?module=auth&action=loginClient">Đăng xuất</a>
-                        </div>
+
+                    <!-- Avtion -->
+                    <div class="action">
+                        <a href="?module=auth&action=loginClient" class="btn sign-up-btn">Sign In</a>
                     </div>
                 </div>
             </div>

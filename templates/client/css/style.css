@@ -1201,14 +1201,10 @@ video {
     padding: 30px 30px;
     height: 50vh;
     max-width: 30%;
-    border: 1px solid #b2b1b1;
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 0 10px;
-   
+    box-shadow: 0 0 15px orange;
 }
-
-
 
 .login .form-login {
     margin-top: 40px;
@@ -1272,35 +1268,77 @@ video {
 }
 
 .forgot {
-    margin-top: 40px;
+    margin: 100px auto;
     padding: 30px 30px;
-    height: 360px;
-    width: 400px;
-    border: 1px solid #ccc;
+    height: 50vh;
+    width: 30%;
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 0 10px;
+    box-shadow: 5px 0 10px orange;
+}
+
+.forgot .email-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .forgot .title {
+    text-align: center;
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .forgot input {
+    width: 320px;
     height: 45px;
+    padding: 0 8px;
+    border: 1px solid #ccc;
     border-radius: 14px;
 }
 
 .forgot button {
     margin-top: 20px;
     height: 45px;
+    line-height: 45px;
+    width: 100%;
     border-radius: 14px;
+    border: none;
+    background-color: orange;
+    color: #fff;
 }
 
 .forgot label {
     font-size: 15px;
     font-family: "Poppins", sans-serif;
+}
+
+.login-inner {
+    margin-top: 25px;
+}
+
+.login-link {
+    display: block;
+    color: orange;
+    font-style: italic;
+    text-align: center;
+}
+
+.login-link:hover {
+    opacity: 0.6;
+    text-decoration: underline;
+}
+
+.forgot-link {
+    display: block;
+    color: orange;
+    font-style: italic;
+    text-align: center;
+}
+
+.forgot-link:hover {
+    opacity: 0.6;
+    text-decoration: underline;
 }
 
 .reset {
@@ -1315,7 +1353,7 @@ video {
 
 .info_Login {
     position: relative;
-    margin-left: 60px;
+    margin-left: 50px;
 }
 
 .info_Login .avatar-header {
@@ -1331,4 +1369,39 @@ video {
     top: -4px;
     right: -22%;
     width: 14px;
+}
+
+.dropdown {
+    float: left;
+}
+
+.dropdown-content {
+    margin-left: 30px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    min-width: 100px;
+    box-shadow: 0px 10px 16px 0px rgba(214, 208, 91, 0.2);
+    z-index: 1;
+    overflow: hidden; 
+}
+
+.dropdown-content a {
+    float: none;
+    font-size: 12px;
+    color: #000;
+    padding: 16px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(243, 221, 180);
+    color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

@@ -10,7 +10,17 @@ $listCourse = getRaw("SELECT * FROM course");
 
 $listblog = getRaw("SELECT * FROM blog ORDER BY create_at DESC LIMIT 6");
 
-layout('header', 'client', $data);
+$checkLogin = isLogin();
+
+if (!empty($checkLogin)) {
+    layout('header', 'client');
+}else {
+    layout('headerPre', 'client');
+}
+
+
+
+// layout('header', 'client', $data);
 ?>
 
         <main>
@@ -224,7 +234,7 @@ layout('header', 'client', $data);
                                     new career.
                                 </p>
                                 <p class="desc">Lesson Impact Report (2022)</p>
-                                <a href="#!" class="btn feature-btn">Sign Up</a>
+                                <a href="?module=auth&action=loginClient" class="btn feature-btn">Sign Up</a>
                             </div>
                         </div>
                     </div>
@@ -276,7 +286,7 @@ layout('header', 'client', $data);
                         <!-- Item 1 -->
                         <?php foreach($listblog as $item): ?>
                         <div class="item">
-                            <a href="#!"
+                            <a href="<?php echo _WEB_HOST_ROOT.'?module=blog&action=detail&id='.$item['id']; ?>"
                                 ><img
                                     src="<?php echo $item['thumbnail'] ?>"
                                     alt=""
@@ -285,9 +295,9 @@ layout('header', 'client', $data);
                             <div class="info">
                                 <span class="date">21 November 2021</span>
                                 <h3 class="title">
-                                    <a href="#!" class="line-clamp"><?php echo $item['title'] ?></a>
+                                    <a href="<?php echo _WEB_HOST_ROOT.'?module=blog&action=detail&id='.$item['id']; ?>" class="line-clamp"><?php echo $item['title'] ?></a>
                                 </h3>
-                                <a class="btn" href="#!">Read More</a>
+                                <a class="btn" href="<?php echo _WEB_HOST_ROOT.'?module=blog&action=detail&id='.$item['id']; ?>">Read More</a>
                             </div>
                         </div>
                         <?php endforeach; ?>                                                                             

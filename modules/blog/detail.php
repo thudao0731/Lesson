@@ -12,7 +12,13 @@ $infoUsers = firstRaw("SELECT users.thumbnail, fullname FROM users WHERE id = '$
     loadErrors(); // load giao diện 404
 }
 
+$checkLogin = isLogin();
+
+if (!empty($checkLogin)) {
     layout('navbar', 'client');
+}else {
+    layout('navbarPre', 'client');
+}
 
 ?>
    <div class="main-blog">

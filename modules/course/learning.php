@@ -1,7 +1,13 @@
 <?php
 
 
-layout('navbar', 'client');
+$checkLogin = isLogin();
+
+if (!empty($checkLogin)) {
+    layout('navbar', 'client');
+}else {
+    layout('navbarPre', 'client');
+}
 $body = getBody();
 
 $id = $body['id'];

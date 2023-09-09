@@ -1,6 +1,14 @@
 <?php
 
-layout('navbar', 'client');
+$checkLogin = isLogin();
+
+if (!empty($checkLogin)) {
+    layout('navbar', 'client');
+}else {
+    layout('navbarPre', 'client');
+}
+
+
 
 $listCourse = getRaw("SELECT * FROM course");
 

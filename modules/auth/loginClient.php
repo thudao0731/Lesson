@@ -8,6 +8,8 @@ if (!defined('_INCODE')) die('Access Deined...');
 layout('header-login', 'client');
 
 
+
+
 //Kiểm tra trạng thái đăng nhập
 // if (isLogin()){
 //     redirect('admin');
@@ -16,6 +18,7 @@ layout('header-login', 'client');
 //Xử lý đăng nhập
 if (isPost()){
     $body = getBody();
+
     if (!empty(trim($body['email'])) && !empty(trim($body['password']))){
         //Kiểm tra đăng nhập
         $email = $body['email'];
@@ -91,8 +94,7 @@ $old = getFlashData('old');
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
                 <hr>
-                <p class="forgot-inner"><a class="forgot-link" href="?module=auth&action=forgot">Quên mật khẩu?</a></p>
+                <p class="forgot-inner"><a class="forgot-link" href="?module=auth&action=forgotClient">Quên mật khẩu?</a></p>
             </form>
         </div>
 <?php
-
