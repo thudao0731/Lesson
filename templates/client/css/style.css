@@ -29,6 +29,10 @@ a {
     text-decoration: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 .btn {
     display: inline-block;
     padding: 0 16px;
@@ -724,7 +728,7 @@ a {
     cursor: pointer;
 }
 
-.blog .dot.active {
+.blog .dot.active-blog {
     background: var(--color-primary);
     cursor: default;
 }
@@ -1384,7 +1388,7 @@ video {
     min-width: 100px;
     box-shadow: 0px 10px 16px 0px rgba(214, 208, 91, 0.2);
     z-index: 1;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .dropdown-content a {

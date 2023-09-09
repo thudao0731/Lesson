@@ -234,7 +234,7 @@ if (!empty($checkLogin)) {
                                     new career.
                                 </p>
                                 <p class="desc">Lesson Impact Report (2022)</p>
-                                <a href="?module=auth&action=loginClient" class="btn feature-btn">Sign Up</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=auth&action=loginClient'?>" class="btn feature-btn">Sign In</a>
                             </div>
                         </div>
                     </div>
@@ -302,11 +302,11 @@ if (!empty($checkLogin)) {
                         </div>
                         <?php endforeach; ?>                                                                             
                     </div>
-                    <!-- <div class="dots">
+                    <div class="dots">
                         <span class="dot"></span>
-                        <span class="dot active"></span>
+                        <span class="dot active-blog"></span>
                         <span class="dot"></span>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </main>
