@@ -75,7 +75,11 @@ if (!empty($checkLogin)) {
                                     foreach($listLesson as $lessonItem):?>
                                         <?php $count++; ?>
                                     <div class="lesson-item">
-                                            <a href="<?php echo getLinkClient('course','learning',['id' => $lessonItem['id']]); ?>"><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<p>Bài '.$count.': '.$lessonItem['name'].'</p> <br />':false ?></a>                             
+                                       <?php if(!empty($checkLogin)) { ?>
+                                            <a href="<?php echo getLinkClient('course','learning',['id' => $lessonItem['id']]); ?>"><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<p>Bài '.$count.': '.$lessonItem['name'].'</p> <br />':false ?></a>  
+                                        <?php } else { ?>
+                                            <p href="<?php echo getLinkClient('course','learning',['id' => $lessonItem['id']]); ?>"><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<p>Bài '.$count.': '.$lessonItem['name'].'</p> <br />':false ?></p>
+                                        <?php } ?>
                                     </div>                     
                                 <?php  endforeach; ?>  
                                 <?php endif; ?>                      
