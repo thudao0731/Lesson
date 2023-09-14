@@ -92,11 +92,11 @@ $old = getFlashData('old');
                                 <input type="text" name="video" id="name" class="form-control image-render" value="<?php echo old('video', $old); ?>">   
                             </div>
                             <div class="col-2">
-                                <button type="button" class="btn btn-success choose-image">Chọn ảnh</button>
+                                <button type="button" class="btn btn-success choose-image"><i class="nav-icon fas fa-solid fa-upload"></i></button>
                             </div>
                         </div>
                     </div>
-                
+
                     <div class="form-group">
                         <label for="course">Khóa học</label>
                         <select name="course_id" id="course" class="form-control">
@@ -142,6 +142,10 @@ $old = getFlashData('old');
                 </div>              
         </form>
     </div>
+
+
+
+
 
 
 <?php

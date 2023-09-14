@@ -10,6 +10,7 @@ html {
 body {
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
+    position: relative;
 }
 /* =========Common========= */
 .main-content {
@@ -1037,6 +1038,10 @@ button {
     color: #2e2100;
 }
 
+.lesson-item p {
+    margin-bottom: -1rem;
+}
+
 .lesson-item a:hover {
     color: #df8908;
     text-decoration: underline;
@@ -1408,4 +1413,234 @@ video {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+
+/* ===== Contatc ====== */
+.contact-inner {
+    display: flex;
+    padding: 80px 0;
+    justify-content: space-between;
+}
+
+.contact-inner input, textarea {
+    height: 50px;
+    padding: 0 8px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+
+.contact-info {
+    width: 400px;
+}
+
+.heading-contact {
+    font-size: 2.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 50px;
+}
+
+.contact-info .item {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info .item + .item {
+    margin-top: 40px;
+}
+
+.contact-info .item .icon-1 {
+    background: #ebeaff;
+}
+
+.contact-info .item .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.contact-info .info {
+    margin-left: 16px;
+}
+
+.contact-meassage {
+    width: 700px;
+    padding-left: 90px;
+}
+
+.contact-meassage .row-info {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.contact-meassage label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-meassage .name, .email {
+    width: 290px;
+}
+
+.contact-meassage .info-title {
+    margin-top: 30px;
+}
+
+.contact-meassage .title {
+    width: 100%;
+} 
+
+.contact-meassage .info-content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-meassage .info-content .content {
+    width: 100%;
+    height: 150px;
+}
+
+.contact-meassage .btn-submit {
+    border-radius: 12px;
+    width: 180px;
+    background-color: orange;
+    border: 2px solid transparent;
+    transition: all 0.5s;
+}
+
+
+.contact-meassage .btn-submit:hover {
+    background: #fff;
+    border: 2px solid orange;
+    color: orange;
+}
+
+.contact-meassage textarea {
+    padding: 10px 10px;
+}
+
+.error {
+    color: red;
+}
+
+.contact-map {
+    width: 100%;
+    padding: 0 0;
+}
+
+.contact-map .maps {
+    width: 100%;
+    height: 600px;
+}
+
+.message {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    bottom: 10%;
+    border-radius: 50%;
+    right: 30px;
+    background-color: transparent;
+}
+
+.message .icon-mes {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.zalo {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    bottom: 20%;
+    right: 30px;
+    background-color: transparent;
+}
+
+.zalo .icon-zalo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.add-blog {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    bottom: 30%;
+    border-radius: 50%;
+    right: 30px;
+    background: #fff;
+}
+
+.add-blog .icon-addBlog {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* ==== CREATE BLOG ===== */
+.create-blog {
+    padding: 50px 0;
+}
+
+.create-blog .inputData {
+    width: 700px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.create-blog .btnUp-image {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 14px;
+    background-color: orange;
+    color: #fff;
+    font-size: 14px;
+}
+
+.create-blog .btnUp-image:hover {
+    opacity: 0.8;
+}
+
+.create-blog label {
+    color: #2e2100;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.create-blog .blog-desc {
+    width: 700px;
+    height: 180px;
+    margin-bottom: 20px;
+}
+
+.create-blog  .btnUp-blog {
+    margin-top: 30px;
+    width: 180px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background-color: orange;
+    color: #fff;
+}
+
+.create-blog  .btnUp-blog:hover {
+    opacity: 0.8;
 }

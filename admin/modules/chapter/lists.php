@@ -132,6 +132,7 @@ $msgType = getFlashData('msg_type');
            </div>
         </div>
         <input type="hidden" name="module" value="chapter">
+        <input type="hidden" name="action" value="lists">
     </form>
 
 

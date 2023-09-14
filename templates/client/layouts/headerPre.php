@@ -115,13 +115,13 @@
                                 <a href="#">Trang chủ</a>
                             </li>
                             <li class="">
-                                <a href="?module=course&action=lists">Khóa học</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=course&action=lists' ?>">Khóa học</a>
                             </li>
                             <li class="">
-                                <a href="?module=blog&action=lists">Blog</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=blog&action=lists' ?>">Blog</a>
                             </li>
                             <li class="">
-                                <a href="#!">Liên hệ</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=contacts&action=page'?>">Liên hệ</a>
                             </li>
                         </ul>
                     </nav>

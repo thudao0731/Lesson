@@ -1,5 +1,5 @@
 <?php
-ini_set ('upload_max_filesize', '200M'); //set file size upload len MB 
+
 /*
  * CKFinder Configuration File
  *
@@ -28,7 +28,6 @@ $config = array();
 $config['authentication'] = function () {
     return true;
 };
-
 
 
 
@@ -62,6 +61,8 @@ $config['images'] = array(
         'large'  => array('width' => 800, 'height' => 600, 'quality' => 80)
     )
 );
+
+// Giới hạn dung lượng tệp tải lên là 10MB
 
 /*=================================== Backends ========================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_backends

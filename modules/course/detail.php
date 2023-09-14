@@ -72,15 +72,15 @@ if (!empty($checkLogin)) {
                                 <?php 
                                     if(!empty($listLesson)):
                                         $count = 0;                
-                                    foreach($listLesson as $lessonItem):?>
+                                    foreach($listLesson as  $lessonItem):?>
                                         <?php $count++; ?>
-                                    <div class="lesson-item">
-                                       <?php if(!empty($checkLogin)) { ?>
-                                            <a href="<?php echo getLinkClient('course','learning',['id' => $lessonItem['id']]); ?>"><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<p>Bài '.$count.': '.$lessonItem['name'].'</p> <br />':false ?></a>  
-                                        <?php } else { ?>
-                                            <p href="<?php echo getLinkClient('course','learning',['id' => $lessonItem['id']]); ?>"><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<p>Bài '.$count.': '.$lessonItem['name'].'</p> <br />':false ?></p>
-                                        <?php } ?>
-                                    </div>                     
+                                        <div class="lesson-item">
+                                            <?php if(!empty($checkLogin)) { ?>
+                                                <a href="<?php echo getLinkClient('course','learning',['id' => $lessonItem['id']]); ?>"><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<p>Bài '.$count.': '.$lessonItem['name'].'</p> <br />':false ?></a>  
+                                            <?php } else { ?>
+                                                <p href="<?php echo getLinkClient('course','learning',['id' => $lessonItem['id']]); ?>"><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<p>Bài '.$count.': '.$lessonItem['name'].'</p> <br />':false ?></p>
+                                            <?php } ?>
+                                        </div>                     
                                 <?php  endforeach; ?>  
                                 <?php endif; ?>                      
                             </div>
@@ -108,6 +108,7 @@ if (!empty($checkLogin)) {
                 </div>
             </div>
         </div>
+        <input type="file" name="" id="">
     </div>
 <?php
 layout('footer', 'client');

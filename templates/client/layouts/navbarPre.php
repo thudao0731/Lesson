@@ -109,16 +109,16 @@
                     <nav class="nav">
                         <ul>
                             <li class="active_header">
-                                <a href="?module=home&action=lists">Trang chủ</a>
+                                <a href="<?php echo _WEB_HOST_ROOT ?>">Trang chủ</a>
                             </li>
                             <li>
-                                <a href="?module=course&action=lists">Khóa học</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=course&action=lists' ?>">Khóa học</a>
                             </li>
                             <li>
-                                <a href="?module=blog&action=lists">Blog</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=blog&action=lists' ?>">Blog</a>
                             </li>
                             <li>
-                                <a href="#!">Liên hệ</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=contacts&action=page' ?>">Liên hệ</a>
                             </li>
                         </ul>
                     </nav>

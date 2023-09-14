@@ -205,6 +205,29 @@
               </li>
             </ul>
           </li>
+
+
+          <?php $getCountContacts = getRows("SELECT id FROM contacts WHERE status=0") ?>
+          <li class="nav-item has-treeview <?php echo activeMenuSidebar('contatcs') ?'menu-open':false; ?>">
+            <a href="#" class="nav-link  <?php echo activeMenuSidebar('contatcs')?'active':false; ?>">
+              <i class="nav-icon fas fa-solid fa-blog"></i>
+              <p>
+                 Quản lý liên hệ
+                <i class="right fas fa-angle-left"></i>
+                <span class="badge badge-danger"><?php echo $getCountContacts; ?></span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo getLinkAdmin('contacts', 'lists'); ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách</p>
+                  
+                  <span class="badge badge-danger"><?php echo $getCountContacts; ?></span>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -90,13 +90,13 @@
                             </li>
                             <li>
                                 <a href="#!"
-                                    ><strong>Email:</strong> email@gmail.com</a
+                                    ><strong>Email:</strong> Daothu3107.dvl@gmail.com</a
                                 >
                             </li>
                             <li>
                                 <a href="#!"
-                                    ><strong>Phone:</strong> + 000 1234 567
-                                    890</a
+                                    ><strong>Phone:</strong> + 8467 012 859
+                                </a
                                 >
                             </li>
                         </ul>
@@ -113,5 +113,6 @@
         <script>
             AOS.init();
         </script>
+        <script src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/js/custom.js"></script>
     </body>
 </html>

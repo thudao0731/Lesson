@@ -115,13 +115,13 @@
                                 <a href="#">Trang chủ</a>
                             </li>
                             <li class="">
-                                <a href="?module=course&action=lists">Khóa học</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=course&action=lists' ?>">Khóa học</a>
                             </li>
                             <li class="">
-                                <a href="?module=blog&action=lists">Blog</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'/?module=blog&action=lists'?>">Blog</a>
                             </li>
                             <li class="">
-                                <a href="#!">Liên hệ</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=contacts&action=page' ?>">Liên hệ</a>
                             </li>
                         </ul>
                     </nav>
@@ -232,4 +232,22 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="add-blog" data-aos="fade-left">
+                <a href="<?php echo _WEB_HOST_ROOT.'?module=blog&action=addClient' ?>">
+                    <img src="<?php echo _WEB_HOST_TEMPLATE?>/img/add.png" class="icon-addBlog" alt="">
+                </a>
+            </div>
+
+            <div class="message" data-aos="fade-left">
+                <a href="https://www.messenger.com/t/100010590132155" target="_blank">
+                    <img src="<?php echo _WEB_HOST_TEMPLATE?>/img/mes4.png" class="icon-mes" alt="">
+                </a>
+            </div>
+
+            <div class="zalo" data-aos="fade-left">
+                <a href="https://chat.zalo.me/">
+                    <img src="<?php echo _WEB_HOST_TEMPLATE?>/img/zalo.png" class="icon-zalo" alt="">
+                </a>
             </div>

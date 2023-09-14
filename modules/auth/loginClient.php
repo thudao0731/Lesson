@@ -7,9 +7,6 @@ if (!defined('_INCODE')) die('Access Deined...');
 
 layout('header-login', 'client');
 
-
-
-
 //Kiểm tra trạng thái đăng nhập
 // if (isLogin()){
 //     redirect('admin');
@@ -51,21 +48,25 @@ if (isPost()){
                     redirect('?module=home&action=lists');
                 }else{
                     setFlashData('msg', 'Lỗi hệ thống, bạn không thể đăng nhập vào lúc này');
+                    setFlashData('msg_type', 'danger');
                     //redirect('?module=auth&action=login');
                 }
 
             }else{
                 setFlashData('msg', '** Mật khẩu không chính xác!');
+                setFlashData('msg_type', 'danger');
                 setFlashData('old', $body);
                 //redirect('?module=auth&action=login');
             }
         }else{
             setFlashData('msg', '** Email chưa được kích hoạt!');
+            setFlashData('msg_type', 'danger');
             setFlashData('old', $body);
             //redirect('?module=auth&action=login');
         }
     }else{
         setFlashData('msg', '** Vui lòng kiểm tra email và mật khẩu!');
+        setFlashData('msg_type', 'danger');
         setFlashData('old', $body);
         //redirect('?module=auth&action=login');
     }
@@ -80,6 +81,7 @@ $old = getFlashData('old');
 
    
         <div class="login">
+            
             <img src="<?php echo _WEB_HOST_TEMPLATE?>/img/logo (4).svg" alt="logo">
             
             <form action="" method="post" class="form-login">

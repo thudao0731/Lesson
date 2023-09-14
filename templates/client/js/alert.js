@@ -1,0 +1,1 @@
+alert('Gửi tin nhắn thành công');

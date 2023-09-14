@@ -210,13 +210,13 @@ if (!empty($checkLogin)) {
                         <div class="body">
                             <div class="feature-image">
                                 <img
-                                    src="<?php echo _WEB_HOST_TEMPLATE?>/img/feature-02.jpg"
+                                    src="<?php echo _WEB_HOST_TEMPLATE?>/img/feature-01.jpg"
                                     alt=""
                                     class="feature-1"
                                     data-aos="zoom-in-up"
                                 />
                                 <img
-                                    src="<?php echo _WEB_HOST_TEMPLATE?>/img/feature-01.jpg"
+                                    src="<?php echo _WEB_HOST_TEMPLATE?>/img/image2.jpg"
                                     alt=""
                                     class="feature-2"
                                     data-aos="zoom-in-up"

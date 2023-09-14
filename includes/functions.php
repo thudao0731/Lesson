@@ -342,3 +342,4 @@ function loadErrors($name='404') {
     require_once $pathErrors;
     die();
 }
+

@@ -91,9 +91,15 @@
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&family=Sen:wght@700&display=swap"
             rel="stylesheet"
         />
+
+        <link rel="stylesheet" href="<?php echo _WEB_HOST_TEMPLATE; ?>/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="<?php echo _WEB_HOST_TEMPLATE; ?>/js/bootstrap.min.js">
         <!-- Style CSS -->
         <link rel="stylesheet" href="<?php echo _WEB_HOST_TEMPLATE?>/css/style.css" />
         
+        <script type="text/javascript" src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/ckfinder/ckfinder.js"></script>
 
     </head>
     <body>
@@ -109,16 +115,16 @@
                     <nav class="nav">
                         <ul>
                             <li class="active_header">
-                                <a href="?module=home&action=lists">Trang chủ</a>
+                                <a href="<?php echo _WEB_HOST_ROOT ?>">Trang chủ</a>
                             </li>
                             <li>
-                                <a href="?module=course&action=lists">Khóa học</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=course&action=lists' ?>">Khóa học</a>
                             </li>
                             <li>
-                                <a href="?module=blog&action=lists">Blog</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=blog&action=lists' ?>">Blog</a>
                             </li>
                             <li>
-                                <a href="#!">Liên hệ</a>
+                                <a href="<?php echo _WEB_HOST_ROOT.'?module=contacts&action=page'?>">Liên hệ</a>
                             </li>
                         </ul>
                     </nav>
@@ -141,4 +147,22 @@
                 </div>
             </div>
         </header>
+
+        <div class="add-blog">
+                <a href="<?php echo _WEB_HOST_ROOT.'?module=blog&action=addClient' ?>">
+                    <img src="<?php echo _WEB_HOST_TEMPLATE?>/img/add.png" class="icon-addBlog" alt="">
+                </a>
+            </div>
+
+            <div class="message">
+                <a href="https://www.messenger.com/t/100010590132155" target="_blank">
+                    <img src="<?php echo _WEB_HOST_TEMPLATE?>/img/mes4.png" class="icon-mes" alt="">
+                </a>
+            </div>
+
+            <div class="zalo">
+                <a href="https://chat.zalo.me/">
+                    <img src="<?php echo _WEB_HOST_TEMPLATE?>/img/zalo.png" class="icon-zalo" alt="">
+                </a>
+            </div>
         <main>
