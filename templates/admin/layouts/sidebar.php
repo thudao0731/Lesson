@@ -157,6 +157,31 @@
           </li>
 
 
+          <li class="nav-item has-treeview <?php echo activeMenuSidebar('orderCourse') ?'menu-open':false; ?>">
+            <a href="#" class="nav-link  <?php echo activeMenuSidebar('orderCourse')?'active':false; ?>">
+              <i class="nav-icon fas fa-solid fa-cart-arrow-down"></i>
+              <p>
+                 Quản lý đơn hàng
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo getLinkAdmin('orderCourse', 'lists'); ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo getLinkAdmin('orderCourse', 'add'); ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm mới</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
           <li class="nav-item has-treeview <?php echo activeMenuSidebar('groups')?'menu-open':false; ?>">
             <a href="#" class="nav-link <?php echo activeMenuSidebar('groups')?'active':false; ?>">
               <i class="nav-icon fas fa-chart-pie"></i>

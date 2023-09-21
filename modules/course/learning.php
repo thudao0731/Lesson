@@ -13,6 +13,7 @@ $body = getBody();
 $id = $body['id'];
 
 
+
 $chapter = getRaw("SELECT * FROM chapter WHERE course_id = '$id'");
 $listLesson = getRaw("SELECT lesson.id, lesson.name, lesson.chapter_id FROM lesson INNER JOIN chapter ON lesson.chapter_id = chapter.id");
 
@@ -25,12 +26,14 @@ if (isset($_GET['id'])) {
 }
 
 // Lấy bài học hiện tại
-$linkVideo = firstRaw("SELECT id, name, video FROM lesson WHERE id = '$lessonId'");
+$linkVideo = firstRaw("SELECT id, name, video, course_id FROM lesson WHERE id = '$lessonId'");
+// Lấy ra ID khóa học hiện tại
+$courseId =  $linkVideo['course_id'];
 
 // Truy vấn cơ sở dữ liệu để lấy thông tin về bài học trước và bài học tiếp theo
-$sqlPrevious = firstRaw("SELECT id, name, video FROM lesson WHERE id < $lessonId ORDER BY id DESC LIMIT 1");
+$sqlPrevious = firstRaw("SELECT id, name, video, course_id FROM lesson WHERE id < $lessonId AND course_id = $courseId ORDER BY id DESC LIMIT 1");
 
-$sqlNext = firstRaw("SELECT id, name, video FROM lesson WHERE id > $lessonId ORDER BY id ASC LIMIT 1");
+$sqlNext = firstRaw("SELECT id, name, video FROM lesson WHERE id > $lessonId AND course_id = $courseId ORDER BY id ASC LIMIT 1");
 ?>   
         <main style="height: 700px;">
 

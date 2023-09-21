@@ -1035,11 +1035,13 @@ button {
 }
 
 .lesson-item a {
+    display: block;
     color: #2e2100;
+    margin-bottom: -15px;
 }
 
 .lesson-item p {
-    margin-bottom: -1rem;
+    margin-bottom: 10px;
 }
 
 .lesson-item a:hover {
@@ -1380,7 +1382,7 @@ video {
     width: 14px;
 }
 
-.dropdown {
+.dropdown-header {
     float: left;
 }
 
@@ -1411,10 +1413,9 @@ video {
     color: #fff;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown-header:hover .dropdown-content {
     display: block;
 }
-
 
 /* ===== Contatc ====== */
 .contact-inner {
@@ -1423,13 +1424,13 @@ video {
     justify-content: space-between;
 }
 
-.contact-inner input, textarea {
+.contact-inner input,
+textarea {
     height: 50px;
     padding: 0 8px;
     border: 1px solid #ccc;
     border-radius: 12px;
 }
-
 
 .contact-info {
     width: 400px;
@@ -1437,7 +1438,7 @@ video {
 
 .heading-contact {
     font-size: 2.4rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: #000;
     margin-bottom: 50px;
@@ -1477,7 +1478,6 @@ video {
 .contact-meassage .row-info {
     display: flex;
     justify-content: space-between;
-
 }
 
 .contact-meassage label {
@@ -1485,7 +1485,8 @@ video {
     margin-bottom: 5px;
 }
 
-.contact-meassage .name, .email {
+.contact-meassage .name,
+.email {
     width: 290px;
 }
 
@@ -1495,7 +1496,7 @@ video {
 
 .contact-meassage .title {
     width: 100%;
-} 
+}
 
 .contact-meassage .info-content {
     margin-top: 30px;
@@ -1514,7 +1515,6 @@ video {
     border: 2px solid transparent;
     transition: all 0.5s;
 }
-
 
 .contact-meassage .btn-submit:hover {
     background: #fff;
@@ -1589,7 +1589,6 @@ video {
     border-radius: 50%;
 }
 
-
 /* ==== CREATE BLOG ===== */
 .create-blog {
     padding: 50px 0;
@@ -1631,7 +1630,7 @@ video {
     margin-bottom: 20px;
 }
 
-.create-blog  .btnUp-blog {
+.create-blog .btnUp-blog {
     margin-top: 30px;
     width: 180px;
     height: 50px;
@@ -1641,6 +1640,59 @@ video {
     color: #fff;
 }
 
-.create-blog  .btnUp-blog:hover {
+.create-blog .btnUp-blog:hover {
     opacity: 0.8;
+}
+
+
+
+/* ===== Order =========== */
+
+
+
+.order {
+    margin: 40px 0;
+    padding: 20px 60px 20px 30px;
+    width: 100%;
+    height: 450px;
+    min-height: 100%;
+    background: #fff;
+    box-shadow: 0 0 10px burlywood;
+}
+
+.order .order-line {
+    margin-top: 20px;
+    width: 100%;
+    height: 1px;
+    background: #e6e5e5;
+    border-radius: 10px;
+}
+
+.order .order-inner {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.order .order-info {
+    max-width: 100%;
+    height: auto;
+    width: 500px;
+}
+
+
+.order-info .desc {
+    color: #647b9c;
+}
+
+.order .order-qr {
+    max-width: 100%;
+    height: auto;
+    width: 300px;
+}
+
+.order .order-imageQR {
+   width: 100%;
+   height: auto;
+   object-fit: cover;
 }

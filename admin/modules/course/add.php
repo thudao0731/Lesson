@@ -35,6 +35,7 @@ if(isPost()) {
         'title' => $body['title'],
         'description' => $body['description'],
         'price' => $body['price'],
+        'active_code' => $body['active_code'],
         'create_at' => date('Y-m-d H:i:s'),
     ];
 
@@ -102,6 +103,12 @@ $old = getFlashData('old');
                         <label for="name">Giá</label>
                         <input type="text" name="price" id="name" class="form-control slug" value="<?php echo old('price', $old); ?>">
                         <?php echo form_error('price', $errors, '<span class="error">', '</span>'); ?>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Code</label>
+                        <input type="text" name="active_code" id="name" class="form-control slug" value="<?php echo old('active_code', $old); ?>">
+                        <?php echo form_error('active_code', $errors, '<span class="error">', '</span>'); ?>
                     </div>
 
                     <div class="form-group col-8">

@@ -107,11 +107,12 @@ $msgType = getFlashData('msg_type');
                 <th wìdth="5%">ID</th>
                 <th>Ảnh</th>
                 <th>Tên</th>
-                <th>Mô tả</th>
-                <th>Giá</th>
+                <th width="25%">Mô tả</th>
+                <th width=8%>Giá</th>
+                <th width=8%>Code</th>
                 <th>Thời gian</th>
-                <th wìdth="3%">Sửa</th>
-                <th wìdth="3%">Xóa</th>
+                <th wìdth="1%">Sửa</th>
+                <th wìdth="1%">Xóa</th>
             </tr>
         </thead>
         <tbody>
@@ -129,6 +130,7 @@ $msgType = getFlashData('msg_type');
                 <td><a href="<?php echo getLinkAdmin('course','edit',['id' => $item['id']]); ?>"><?php echo $item['title']; ?></a></td>
                 <td><?php echo $item['description'] ?></td>
                 <td><?php echo $item['price']; ?></td>
+                <td><?php echo $item['active_code']; ?></td>
                 <td><?php echo (!empty($item['create_at']))?getDateFormat($item['create_at'], 'd/m/Y H:i:s') : false; ?></td>
                 <td class="text-center"><a href="<?php echo getLinkAdmin('course','edit',['id' => $item['id']]); ?>" class="btn btn-warning btn-sm" ><i class="fa fa-edit"></i> Sửa</a></td>
                 <td class="text-center"><a href="<?php echo getLinkAdmin('course','delete',['id' => $item['id']]); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')"><i class="fa fa-trash"></i> Xóa</a></td>

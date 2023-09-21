@@ -50,6 +50,7 @@ if(isPost()) {
         'thumbnail' => $body['thumbnail'],
         'description' => $body['description'],
         'content' => $body['content'],
+        'status' => $body['status'],
         'update_at' => date('Y-m-d H:i:s'),
     ];
 
@@ -60,7 +61,7 @@ if(isPost()) {
     if ($updateStatus) {
         setFlashData('msg', 'Cập nhật blog thành công');
         setFlashData('msg_type', 'success');
-        redirect('admin/?module=blog&action');
+        redirect('admin/?module=blog&action&action=lists');
     }else {
         setFlashData('msg', 'Hệ thống đang gặp sự cố, vui lòng thử lại sau');
         setFlashData('msg_type', 'danger');
@@ -122,6 +123,15 @@ if (!empty($blogDetail) && empty($old)) {
                     <div class="form-group col-8">
                         <label for="name">Nội dung</label>
                         <textarea name="content" class="form-control editor"><?php echo old('content', $old); ?></textarea>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="">Trạng thái</label>
+                        <select name="status" class="form-control">
+                            <option value="">Chọn trạng thái</option>
+                            <option value="0" <?php echo (old('status', $old) == 0) ? 'selected':false; ?>>Chưa duyệt</option>
+                            <option value="1" <?php echo (old('status', $old) == 1) ? 'selected':false; ?>>Đã duyệt</option>
+                        </select>
                     </div>
              
            <hr />

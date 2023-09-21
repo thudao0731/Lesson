@@ -11,7 +11,6 @@ layout('header-login', 'client');
 // if (isLogin()){
 //     redirect('admin');
 // }
-
 //Xử lý đăng nhập
 if (isPost()){
     $body = getBody();
@@ -47,28 +46,20 @@ if (isPost()){
                     //Chuyển hướng qua trang quản lý users
                     redirect('?module=home&action=lists');
                 }else{
-                    setFlashData('msg', 'Lỗi hệ thống, bạn không thể đăng nhập vào lúc này');
+                    setFlashData('msg', '** Vui lòng kiểm tra lại thông tin !');
                     setFlashData('msg_type', 'danger');
-                    //redirect('?module=auth&action=login');
                 }
 
             }else{
-                setFlashData('msg', '** Mật khẩu không chính xác!');
+                setFlashData('msg', '** Mật khẩu chưa chính xác !');
                 setFlashData('msg_type', 'danger');
-                setFlashData('old', $body);
-                //redirect('?module=auth&action=login');
             }
         }else{
-            setFlashData('msg', '** Email chưa được kích hoạt!');
+            setFlashData('msg', '** Email chưa tồn tại trong hệ thống !');
             setFlashData('msg_type', 'danger');
-            setFlashData('old', $body);
-            //redirect('?module=auth&action=login');
         }
     }else{
-        setFlashData('msg', '** Vui lòng kiểm tra email và mật khẩu!');
-        setFlashData('msg_type', 'danger');
-        setFlashData('old', $body);
-        //redirect('?module=auth&action=login');
+       
     }
 
     redirect('/?module=auth&action=loginClient');
@@ -77,11 +68,10 @@ if (isPost()){
 $msg = getFlashData('msg');
 $msgType = getFlashData('msg_type');
 $old = getFlashData('old');
+
 ?>
 
-   
         <div class="login">
-            
             <img src="<?php echo _WEB_HOST_TEMPLATE?>/img/logo (4).svg" alt="logo">
             
             <form action="" method="post" class="form-login">

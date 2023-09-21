@@ -1,7 +1,10 @@
 <?php
 
 if(!empty(getBody()['id'])) {
+
     $id = getBody()['id'];
+
+   
 
     $chapterCount = getRows("SELECT id FROM chapter WHERE course_id = '$id'");
     $lessonCount = getRows("SELECT id FROM lesson WHERE course_id = '$id'");
@@ -11,14 +14,7 @@ if(!empty(getBody()['id'])) {
     // $listLesson = getRaw("SELECT * FROM lesson WHERE course_id = '$id'");
 
     $courseDetail = firstRaw("SELECT * FROM course WHERE id='$id'");
-    $listLesson = getRaw("SELECT lesson.id, lesson.name, lesson.chapter_id FROM lesson INNER JOIN chapter ON lesson.chapter_id = chapter.id");
-
-    // echo '<pre>';
-    // print_r($listLesson);
-    // echo '<pre>';
-    
-    
-    
+    $listLesson = getRaw("SELECT lesson.id, lesson.name, lesson.chapter_id FROM lesson INNER JOIN chapter ON lesson.chapter_id = chapter.id WHERE lesson.course_id = '$id'");
         
     $courseLearn = getRaw("SELECT * FROM learn WHERE course_id = '$id'");
     if(empty($courseDetail)) {
@@ -29,7 +25,13 @@ if(!empty(getBody()['id'])) {
     loadErrors(); // load giao diện 404
 }
 
+
 $checkLogin = isLogin();
+
+if(!empty($checkLogin)) {
+    $userId = isLogin()['user_id'];
+    $checkOrder = getRaw("SELECT * FROM ordercourse WHERE course_id = $id AND user_id = $userId AND status=1");
+}
 
 if (!empty($checkLogin)) {
     layout('navbar', 'client');
@@ -75,10 +77,10 @@ if (!empty($checkLogin)) {
                                     foreach($listLesson as  $lessonItem):?>
                                         <?php $count++; ?>
                                         <div class="lesson-item">
-                                            <?php if(!empty($checkLogin)) { ?>
+                                            <?php if(!empty($checkLogin) && !empty($checkOrder)) { ?>
                                                 <a href="<?php echo getLinkClient('course','learning',['id' => $lessonItem['id']]); ?>"><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<p>Bài '.$count.': '.$lessonItem['name'].'</p> <br />':false ?></a>  
                                             <?php } else { ?>
-                                                <p href="<?php echo getLinkClient('course','learning',['id' => $lessonItem['id']]); ?>"><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<p>Bài '.$count.': '.$lessonItem['name'].'</p> <br />':false ?></p>
+                                                <p><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<p>Bài '.$count.': '.$lessonItem['name'].'</p> <br />':false ?></p>
                                             <?php } ?>
                                         </div>                     
                                 <?php  endforeach; ?>  
@@ -106,9 +108,20 @@ if (!empty($checkLogin)) {
                 <div class="course-detail_image">
                     <img src="<?php echo _WEB_HOST_TEMPLATE ?>/img/ban1.png" alt="" class="course--detail__thumb2">
                 </div>
+                
+                <?php  
+                    if(!empty($checkLogin)) {
+                ?>
+                        <a href="<?php echo getLinkClient('course','order', ['id' => $id]) ?>" class="btn">Mua khóa học</a>
+                <?php
+                    } else {
+                        ?>
+                        <a href="<?php echo getLinkClient('auth', 'loginClient')?>" class="btn">Mua khóa học</a>
+                        <?php
+                    }
+                ?>
             </div>
         </div>
-        <input type="file" name="" id="">
     </div>
 <?php
 layout('footer', 'client');

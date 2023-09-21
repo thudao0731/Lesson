@@ -111,16 +111,16 @@
                     <!-- Navbar -->
                     <nav class="nav">
                         <ul>
-                            <li class="active_header">
+                            <li class="menu-item active_header">
                                 <a href="#">Trang chủ</a>
                             </li>
-                            <li class="">
+                            <li  class="menu-item">
                                 <a href="<?php echo _WEB_HOST_ROOT.'?module=course&action=lists' ?>">Khóa học</a>
                             </li>
-                            <li class="">
+                            <li class="menu-item" >
                                 <a href="<?php echo _WEB_HOST_ROOT.'/?module=blog&action=lists'?>">Blog</a>
                             </li>
-                            <li class="">
+                            <li class="menu-item">
                                 <a href="<?php echo _WEB_HOST_ROOT.'?module=contacts&action=page' ?>">Liên hệ</a>
                             </li>
                         </ul>
@@ -131,7 +131,7 @@
                         $userDetail = getUserInfo($userId); // Lấy thông tin người dùng
                     ?>
                     <!-- Info -->
-                    <div class="dropdown">
+                    <div class="dropdown-header">
                         <div class="info_Login">
                             <a href="#!"><img src="<?php echo $userDetail['thumbnail'] ?>" alt="" class="avatar-header"></a>
                             <img src="<?php echo _WEB_HOST_ROOT ?>/templates/client/img/king.svg" alt="" class="king">
@@ -247,7 +247,7 @@
             </div>
 
             <div class="zalo" data-aos="fade-left">
-                <a href="https://chat.zalo.me/">
+                <a href="https://chat.zalo.me/" target="_blank">
                     <img src="<?php echo _WEB_HOST_TEMPLATE?>/img/zalo.png" class="icon-zalo" alt="">
                 </a>
             </div>

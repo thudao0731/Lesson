@@ -30,7 +30,7 @@ if(!empty(getBody()['page'])) {
 $offset = ($page - 1) * $perPage;
 
 // Lấy dứ liệu blog
-$listblog = getRaw("SELECT * FROM blog LIMIT $offset, $perPage");
+$listblog = getRaw("SELECT * FROM blog WHERE status = 1 ORDER BY create_at DESC LIMIT $offset, $perPage ");
 
 // Xử lý query string tìm kiếm với phân trang
 $queryString = null;

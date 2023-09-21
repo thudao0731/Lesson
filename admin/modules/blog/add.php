@@ -33,6 +33,7 @@ if(isPost()) {
         'description' => $body['description'],
         'content' => $body['content'],
         'user_id' => $userId,
+        'status' => $body['status'],
         'create_at' => date('Y-m-d H:i:s', ),
     ];
     $insertStatus = insert('blog', $dataInsert);
@@ -97,6 +98,15 @@ $old = getFlashData('old');
                     <div class="form-group col-8" style="margin-top: 20px;">
                         <label for="name">Nội dung</label>
                         <textarea name="content" class="form-control editor"><?php echo old('content', $old); ?></textarea>
+                    </div>
+
+                    <div class="form-group col-8">
+                        <label for="">Trạng thái</label>
+                        <select name="status" class="form-control">
+                            <option value="">Chọn trạng thái</option>
+                            <option value="0" <?php echo (old('status', $old==0)) ? 'selected':false;  ?>>Chưa duyệt</option>
+                            <option value="1" <?php echo (old('status', $old==1)) ? 'selected':false; ?>>Đã duyệt</option>
+                        </select>
                     </div>
                     
            

@@ -8,19 +8,18 @@ $data = [
 // Truy vấn database
 $listCourse = getRaw("SELECT * FROM course");
 
-$listblog = getRaw("SELECT * FROM blog ORDER BY create_at DESC LIMIT 6");
+$listblog = getRaw("SELECT * FROM blog WHERE status = 1 ORDER BY create_at DESC LIMIT 6");
 
 $checkLogin = isLogin();
 
-if (!empty($checkLogin)) {
-    layout('header', 'client');
-}else {
-    layout('headerPre', 'client');
-}
+    if (!empty($checkLogin)) {
+        layout('header', 'client');
+       
+    }else {
+        layout('headerPre', 'client');
+    }
 
 
-
-// layout('header', 'client', $data);
 ?>
 
         <main>
@@ -204,6 +203,7 @@ if (!empty($checkLogin)) {
                     </div>
                 </div>
 
+               
                 <!-- Feature 1-->
                 <div class="feature">
                     <div class="main-content">
@@ -312,5 +312,5 @@ if (!empty($checkLogin)) {
         </main>
 <?php
 
-layout('footer', 'client', $data);
+layout('footer', 'client');
 
