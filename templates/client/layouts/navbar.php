@@ -97,6 +97,9 @@
         <link rel="stylesheet" href="<?php echo _WEB_HOST_TEMPLATE; ?>/js/bootstrap.min.js">
         <!-- Style CSS -->
         <link rel="stylesheet" href="<?php echo _WEB_HOST_TEMPLATE?>/css/style.css" />
+         <!-- Font Awesome -->
+         <link rel="stylesheet" href="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/plugins/fontawesome-free/css/all.min.css">
+         
         
         <script type="text/javascript" src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/ckeditor/ckeditor.js"></script>
         <script type="text/javascript" src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/ckfinder/ckfinder.js"></script>

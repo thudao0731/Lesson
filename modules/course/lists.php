@@ -1,4 +1,7 @@
 <?php
+$data = [
+    'pageTitle' => 'Danh sách Blog'
+];
 
 $checkLogin = isLogin();
 

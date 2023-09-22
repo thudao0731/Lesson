@@ -10,6 +10,8 @@ $listCourse = getRaw("SELECT * FROM course");
 
 $listblog = getRaw("SELECT * FROM blog WHERE status = 1 ORDER BY create_at DESC LIMIT 6");
 
+$listFeedBack = getRaw("SELECT * FROM feedback ");
+
 $checkLogin = isLogin();
 
     if (!empty($checkLogin)) {
@@ -28,10 +30,9 @@ $checkLogin = isLogin();
                 <div class="main-content">
                     <div class="popular-top" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
                         <div class="info">
-                            <h2 class="heading lv2">Our popular courses</h2>
+                            <h2 class="heading lv2">Các khóa học của chúng tôi</h2>
                             <p class="desc">
-                                Build new skills with new trendy courses and
-                                shine for the next future career.
+                                Xây dựng các kỹ năng mới với các khóa học mới theo xu hướng và tỏa sáng cho sự nghiệp tiếp theo trong tương lai.
                             </p>
                         </div>
                         <div class="controls">
@@ -86,7 +87,7 @@ $checkLogin = isLogin();
                                 <div class="foot">
                                     <span class="price"><?php echo $item['price'] ?></span>
                                     <a href="<?php echo _WEB_HOST_ROOT.'?module=course&action=detail&id='.$item['id']; ?>" class="btn book-btn">
-                                        Join Now
+                                        Mua ngay
                                     </a>
                                 </div>
                             </div>
@@ -102,39 +103,8 @@ $checkLogin = isLogin();
                 <div class="feedback">
                     <div class="main-content">
                         <div class="feedback-list" data-aos="fade-right">
-                            <!-- feedback item 1
-                            <div class="feedback-item">
-                                <div class="info">
-                                    <img
-                                        src="<?php echo _WEB_HOST_TEMPLATE?>/img/Ellipse 2649.jpg"
-                                        alt="feedback-avatar"
-                                        class="avatar"
-                                    />
-                                    <p class="title">Peter Moor</p>
-                                    <p class="desc">Student of Web Design</p>
-                                    <div class="dots">
-                                        <span class="dot active"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <img
-                                        src="<?php echo _WEB_HOST_TEMPLATE?>/img/open-quotes.svg"
-                                        alt=""
-                                        class="open-quotes"
-                                    />
-                                    <blockquote>
-                                        Not only does my resume look
-                                        impressive—filled with the names and
-                                        logos of world-class institutions—but
-                                        these certificates also bring me closer
-                                        to my career goals by validating the
-                                        skills I've learned."
-                                    </blockquote>
-                                </div>
-                            </div> -->
-                            <!-- feedback item 2 -->
+                            <?php foreach($listFeedBack as $item): ?>
+                                  <!-- feedback item 2 -->
                             <div class="feedback-item">
                                 <div class="info">
                                     <img
@@ -142,8 +112,8 @@ $checkLogin = isLogin();
                                         alt="feedback-avatar"
                                         class="avatar"
                                     />
-                                    <p class="title">Phuong Thao</p>
-                                    <p class="desc">Student of Web Design</p>
+                                    <p class="title"><?php echo $item['fullname'] ?></p>
+                                    <p class="desc"><?php echo $item['role'] ?></p>
                                     <div class="dots">
                                         <span class="dot"></span>
                                         <span class="dot active"></span>
@@ -157,49 +127,12 @@ $checkLogin = isLogin();
                                         class="open-quotes"
                                     />
                                     <blockquote>
-                                        Not only does my resume look
-                                        impressive—filled with the names and
-                                        logos of world-class institutions—but
-                                        these certificates also bring me closer
-                                        to my career goals by validating the
-                                        skills I've learned."
+                                        <?php echo $item['content'] ?>
                                     </blockquote>
                                 </div>
                             </div>
-                            <!-- feedback item 3 -->
-                            <div class="feedback-item">
-                                <div class="info">
-                                    <img
-                                        src="<?php echo _WEB_HOST_TEMPLATE?>/img/feedback-03.jpg"
-                                        alt="feedback-avatar"
-                                        class="avatar"
-                                    />
-                                    <p class="title">Dao Thu</p>
-                                    <p class="desc">Student of Web Design</p>
-                                    <div class="dots">
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot active"></span>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <img
-                                        src="<?php echo _WEB_HOST_TEMPLATE?>/img/open-quotes.svg"
-                                        alt=""
-                                        class="open-quotes"
-                                    />
-                                    <blockquote>
-                                        Not only does my resume look
-                                        impressive—filled with the names and
-                                        logos of world-class institutions—but
-                                        these certificates also bring me closer
-                                        to my career goals by validating the
-                                        skills I've learned."
-                                    </blockquote>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
-                        <!-- feedback item 1 -->
                     </div>
                 </div>
 
@@ -276,7 +209,7 @@ $checkLogin = isLogin();
             <div class="blog" id="blog">
                 <div class="main-content">
                     <div class="blog-top" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
-                        <h2 class="heading lv2">Our Blog</h2>
+                        <h2 class="heading lv2">Blog của chúng tôi</h2>
                         <p class="desc">
                             Read our regular travel blog and know the latest
                             update of tour and travel

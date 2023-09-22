@@ -1040,14 +1040,37 @@ button {
     margin-bottom: -15px;
 }
 
-.lesson-item p {
-    margin-bottom: 10px;
+.listLesson .lesson-row {
+    align-items: center;
+    display: flex;
+    column-gap: 10px;
+}
+
+.listLesson .lessonActive-row {
+    display: flex;
+    column-gap: 10px;
+}
+
+.lesson-item .lesson-name {
+    margin-bottom: -5px;
+}
+
+.lesson-icon {
+    width: 8px;
+    height: 8px;
+    background: orange;
+    border-radius: 50%;
+}
+
+.icon-active {
+    margin-top: 5px;
 }
 
 .lesson-item a:hover {
     color: #df8908;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
+
 
 video {
     width: 800px;
@@ -1644,11 +1667,7 @@ textarea {
     opacity: 0.8;
 }
 
-
-
 /* ===== Order =========== */
-
-
 
 .order {
     margin: 40px 0;
@@ -1680,7 +1699,6 @@ textarea {
     width: 500px;
 }
 
-
 .order-info .desc {
     color: #647b9c;
 }
@@ -1692,7 +1710,7 @@ textarea {
 }
 
 .order .order-imageQR {
-   width: 100%;
-   height: auto;
-   object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }

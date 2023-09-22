@@ -93,6 +93,8 @@
         />
         <!-- Style CSS -->
         <link rel="stylesheet" href="<?php echo _WEB_HOST_TEMPLATE?>/css/style.css" />
+         <!-- Font Awesome -->
+         <link rel="stylesheet" href="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/plugins/fontawesome-free/css/all.min.css">
 
         <!-- Animation -->
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -128,7 +130,7 @@
 
                     <!-- Avtion -->
                     <div class="action">
-                        <a href="?module=auth&action=loginClient" class="btn sign-up-btn">Sign In</a>
+                        <a href="?module=auth&action=loginClient" class="btn sign-up-btn">Đăng nhập</a>
                     </div>
                 </div>
             </div>

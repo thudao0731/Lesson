@@ -47,7 +47,7 @@ if (isGet()) {
             $operator = 'WHERE';
         }
 
-        $filter .= " $operator orderCourse.name LIKE '%$keyword%'";
+        $filter .= " $operator orderCourse.email LIKE '%$keyword%'";
 
     }
 
@@ -207,7 +207,7 @@ $msgType = getFlashData('msg_type');
 
             <?php endforeach; else: ?>
                 <tr>
-                    <td colspan="8">
+                    <td colspan="9">
                         <div class="alert alert-danger text-center">Không tìm thấy đơn hàng</div>
                     </td>
                 </tr>
