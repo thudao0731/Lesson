@@ -97,7 +97,7 @@ button {
 
 .header .nav a {
     position: relative;
-    padding: 8px 21px;
+    padding: 10px 21px;
     font-weight: 400;
     font-size: 1.6rem;
     color: #5f5b53;
@@ -112,6 +112,8 @@ button {
 .nav a:hover {
     color: #171100;
     text-shadow: 1px 0 0 currentColor;
+    background: #f5ead4;
+    border-radius: 10px;
 }
 
 .nav .active_header a::after {
@@ -596,7 +598,7 @@ button {
 /* ==================Blog=============== */
 .blog {
     margin-top: 135px;
-    padding: 96px 0;
+    padding-top: 96px;
     background: #fffcf4;
 }
 
@@ -1044,6 +1046,9 @@ button {
     align-items: center;
     display: flex;
     column-gap: 10px;
+    /* border-bottom: 1px solid #f0eded;
+    padding-bottom: 10px;
+    margin-bottom: -20px; */
 }
 
 .listLesson .lessonActive-row {
@@ -1051,9 +1056,9 @@ button {
     column-gap: 10px;
 }
 
-.lesson-item .lesson-name {
-    margin-bottom: -5px;
-}
+/* .lesson-item .lesson-name {
+    margin-bottom: -3px;
+} */
 
 .lesson-icon {
     width: 8px;
@@ -1067,14 +1072,13 @@ button {
 }
 
 .lesson-item a:hover {
-    color: #df8908;
+    color: #b9812e;
     /* text-decoration: underline; */
 }
 
-
 video {
     width: 800px;
-    height: 400px;
+    height: 420px;
     object-fit: cover;
     border-radius: 18px;
     border: 1px solid #ccc;
@@ -1713,4 +1717,15 @@ textarea {
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+.icon-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background: #f8f0d9;
+    padding-bottom: 3px;
+    border-radius: 50%;
 }

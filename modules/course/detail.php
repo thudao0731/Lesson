@@ -79,9 +79,9 @@ if (!empty($checkLogin)) {
                                         <?php $count++; ?>
                                         <div class="lesson-item">
                                             <?php if(!empty($checkLogin) && !empty($checkOrder)) { ?>
-                                                <a href="<?php echo getLinkClient('course','learning',['id' => $lessonItem['id']]); ?>"><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<div class="lessonActive-row"><i class="nav-icon fas fa-play-circle icon-active" style="color: orange; opacity:0.6"></i> <p>Bài '.$count.': '.$lessonItem['name'].'</p></div> <br />':false ?></a>  
+                                                <a href="<?php echo getLinkClient('course','learning',['id' => $lessonItem['id']]); ?>"><?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<div class="lessonActive-row"><div class="icon-bg"><i class="nav-icon fas fa-play-circle icon-active" style="color: orange; opacity:0.6"></i></div> <p>Bài '.$count.': '.$lessonItem['name'].'</p></div> <br />':false ?></a>  
                                             <?php } else { ?>
-                                                <?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<div class="lesson-row"><i class="nav-icon fas fa-play-circle" style="color: orange; opacity:0.6; margin-top:4px"></i><p class="lesson-name">Bài '.$count.': '.$lessonItem['name'].'</p> </div><br />':false ?>
+                                                <?php echo ($lessonItem['chapter_id'] == $chapterItem['id'])?'<div class="lesson-row"><div class="icon-bg"><i class="nav-icon fas fa-play-circle" style="color: orange; opacity:0.6; margin-top:4px"></i></div><p class="lesson-name">Bài '.$count.': '.$lessonItem['name'].'</p> </div><br />':false ?>
                                             <?php } ?>
                                         </div>                     
                                 <?php  endforeach; ?>  

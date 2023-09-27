@@ -209,7 +209,7 @@ $checkLogin = isLogin();
             <div class="blog" id="blog">
                 <div class="main-content">
                     <div class="blog-top" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
-                        <h2 class="heading lv2">Blog của chúng tôi</h2>
+                        <h2 class="heading lv2">Bài viết mới nhất</h2>
                         <p class="desc">
                             Read our regular travel blog and know the latest
                             update of tour and travel
@@ -235,11 +235,11 @@ $checkLogin = isLogin();
                         </div>
                         <?php endforeach; ?>                                                                             
                     </div>
-                    <div class="dots">
+                    <!-- <div class="dots">
                         <span class="dot"></span>
                         <span class="dot active-blog"></span>
                         <span class="dot"></span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </main>

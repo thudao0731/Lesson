@@ -38,7 +38,7 @@ if(isPost()) {
     ];
     $insertStatus = insert('blog', $dataInsert);
     if ($insertStatus) {
-        setFlashData('msg', '* Đăng bài blog thành công, cám ơn bạn đã đóng góp trang Web');
+        setFlashData('msg', '*** Thank you very much');
         setFlashData('msg_type', 'success');
     }else {
         setFlashData('msg', 'Hệ thống đang gặp sự cố, vui lòng thử lại sau');
@@ -47,7 +47,7 @@ if(isPost()) {
 
   }else {  
     // Có lỗi xảy ra
-    setFlashData('msg', 'Vui lòng kiểm tra chính xác thông tin nhập vào');
+    setFlashData('msg', '** Vui lòng kiểm tra chính xác thông tin nhập vào!');
     setFlashData('msg_type', 'danger');
     setFlashData('errors', $errors);
     setFlashData('old', $body);  // giữ lại các trường dữ liệu hợp lê khi nhập vào
@@ -67,7 +67,9 @@ $old = getFlashData('old');
       <div class="main-content">
             <div class="create-blog">
                 <form action="" method="post">
-                    <?php echo getMsg($msg, $msgType);?>
+                    <div style="width: 700px">
+                        <?php echo getMsg($msg, $msgType);?>
+                    </div>
                         <div class="">
                             <label for="name">Tiêu đề *</label><br/>
                             <input type="text" name="title" id="name" class="inputData">
@@ -98,7 +100,7 @@ $old = getFlashData('old');
                         
             
                     <div class="">
-                        <button type="submit" class="btnUp-blog">Đăng bài</button>
+                        <button type="submit" onclick="return confirm('Bạn có chắc chắn muốn đăng bài không ?')" class="btnUp-blog">Đăng bài</button>
                     </div>
             
                 </form>

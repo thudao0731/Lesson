@@ -24,6 +24,7 @@ if (isPost()){
         $userQuery = firstRaw("SELECT id, password FROM users WHERE email='$email'");
 
         if (!empty($userQuery)){
+
             $passwordHash = $userQuery['password'];
             $user_id = $userQuery['id'];
             if (password_verify($password, $passwordHash)){
@@ -58,8 +59,6 @@ if (isPost()){
             setFlashData('msg', '** Email chưa tồn tại trong hệ thống !');
             setFlashData('msg_type', 'danger');
         }
-    }else{
-       
     }
 
     redirect('/?module=auth&action=loginClient');
@@ -71,22 +70,33 @@ $old = getFlashData('old');
 
 ?>
 
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body class="body-login">
         <div class="login">
+            <?php echo getMsg($msg, $msgType) ?>
             <img src="<?php echo _WEB_HOST_TEMPLATE?>/img/logo (4).svg" alt="logo">
             
             <form action="" method="post" class="form-login">
                 
                 <div class="email-inner">
                     <label for="">Email</label>
-                    <input type="email" name="email" class="form-control" placeholder="Địa chỉ email..." value="<?php echo old('email', $old); ?>">
+                    <input type="email" name="email" class="" placeholder="Địa chỉ email..." required value="<?php echo old('email', $old); ?>">
                 </div>
                 <div class="pass-inner">
                     <label for="">Mật khẩu</label>
-                    <input type="password" name="password" class="form-control" placeholder="Mật khẩu...">
+                    <input type="password" name="password" class="" required minlength="6" placeholder="Mật khẩu...">
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                <button type="submit" class="btn btn-block">Đăng nhập</button>
                 <hr>
                 <p class="forgot-inner"><a class="forgot-link" href="?module=auth&action=forgotClient">Quên mật khẩu?</a></p>
             </form>
         </div>
+        </body>
+        </html>
 <?php
